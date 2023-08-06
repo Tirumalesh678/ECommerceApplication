@@ -4,12 +4,13 @@ public enum UserRole {
     CUSTOMER("customer"),
     ADMIN("admin");
 
-    private final String displayName;
-    UserRole(String displayName) {
-        this.displayName=displayName;
+    private final String role;
+
+    UserRole(String role) {
+        this.role = role;
     }
-    public String getDisplayName()
-    {
-        return displayName;
+
+    public String getRole() {
+        return role;
     }
 }

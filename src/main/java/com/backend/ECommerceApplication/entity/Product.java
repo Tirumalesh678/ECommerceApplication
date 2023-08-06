@@ -20,6 +20,7 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "product_id")
     private Long productId;
 
     @Column(nullable = false)
@@ -30,21 +31,21 @@ public class Product {
     @Column(nullable = false)
     private BigDecimal price;
 
-    @Column(nullable = false)
+    @Column(name="quantity_in_stock",nullable = false)
     private Integer quantityInStock;
 
     @ManyToOne
-    @JoinColumn(name = "category_id")
+    @JoinColumn(name = "categoryId")
     private Category category;
 
-    @Column(nullable = false)
+    @Column(name="image_url",nullable = false)
     private String imageUrl;
 
     @CreationTimestamp
-    @Column(nullable = false,updatable = false)
+    @Column(name="created_at",nullable = false,updatable = false)
     private LocalDateTime createdAt;
 
     @UpdateTimestamp
-    @Column(nullable = false)
+    @Column(name="updated_at",nullable = false)
     private  LocalDateTime updatedAt;
 }

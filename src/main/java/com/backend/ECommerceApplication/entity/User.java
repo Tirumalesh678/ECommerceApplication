@@ -20,6 +20,7 @@ import java.time.LocalDateTime;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private Long userId;
 
     @Column(nullable = false)
@@ -31,15 +32,15 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @Enumerated(EnumType.STRING)
+    /*@Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private UserRole role;
+    private UserRole role;*/
 
-    @Column(nullable = false,updatable = false)
+    @Column(name="created_at",nullable = false,updatable = false)
     @CreationTimestamp
     private LocalDateTime createdAt;
 
-    @Column(nullable = false)
+    @Column(name="updated_at",nullable = false)
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 }

@@ -19,6 +19,7 @@ public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "category_id")
     private Long categoryId;
 
     @Column(nullable = false)
@@ -27,11 +28,11 @@ public class Category {
 
     private String description;
 
-    @Column(nullable = false,updatable = false)
+    @Column(name="created_at",nullable = false,updatable = false)
     @CreationTimestamp
     private LocalDateTime createdAt;
 
-    @Column(nullable = false,updatable = true)
+    @Column(name="updated_at",nullable = false,updatable = true)
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 

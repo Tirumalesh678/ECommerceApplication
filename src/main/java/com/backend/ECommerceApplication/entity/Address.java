@@ -19,13 +19,14 @@ public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "address_id")
     private Long addressId;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "userId")
     private User user;
 
-    @Column(nullable = false)
+    @Column(name="street_address",nullable = false)
     private String streetAddress;
 
     @Column(nullable = false)
@@ -34,17 +35,17 @@ public class Address {
     @Column(nullable = false)
     private String state;
 
-    @Column(nullable = false)
+    @Column(name="postal_code",nullable = false)
     private String postalCode;
 
     @Column(nullable = false)
     private String country;
 
     @CreationTimestamp
-    @Column(nullable = false,updatable = false)
+    @Column(name="created_at",nullable = false,updatable = false)
     private LocalDateTime createdAt;
 
     @UpdateTimestamp
-    @Column(nullable = false)
+    @Column(name="updated_at",nullable = false)
     private LocalDateTime updatedAt;
 }

@@ -16,30 +16,31 @@ import java.time.LocalDateTime;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Orders")
+@Table(name = "orders")
 public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "order_id")
     private Long orderId;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "userId")
     private User user;
 
-    @Column(nullable = false)
+    @Column(name="order_date",nullable = false)
     private LocalDateTime orderDate;
 
-    @Column(nullable = true)
+    @Column(name="total_amount",nullable = true)
     private BigDecimal totalAmount;
 
-    @Column(nullable = false)
+    @Column(name="order_status",nullable = false)
     private String orderStatus;
 
-    @Column(nullable = false,updatable = false)
+    @Column(name="created_at",nullable = false,updatable = false)
     @CreationTimestamp
     private LocalDateTime createdAt;
 
-    @Column(nullable = false)
+    @Column(name="updated_at",nullable = false)
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 

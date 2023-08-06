@@ -12,6 +12,14 @@
 	<artifactId>ECommerceApplication</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ECommerceApplication</name>
+
+
+
+
+
+
+
+
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
@@ -54,6 +62,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${project.parent.version}</version>
 				<configuration>
 					<excludes>
 						<exclude>

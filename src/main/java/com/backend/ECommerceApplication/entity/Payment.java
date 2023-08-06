@@ -20,29 +20,30 @@ import java.time.LocalDateTime;
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "payment_id")
     private Long paymentId;
 
     @OneToOne
-    @JoinColumn(name = "order_id")
+    @JoinColumn(name = "orderId")
     private Orders orders;
 
-    @Column(nullable = false)
+    @Column(name="payment_date",nullable = false)
     private LocalDateTime paymentDate;
 
-    @Column(nullable = false)
+    @Column(name="payment_status",nullable = false)
     private String paymentStatus;
 
-    @Column(nullable = false)
+    @Column(name="payment_amount",nullable = false)
     private BigDecimal paymentAmount;
 
-    @Column(nullable = false)
+    @Column(name="payment_method",nullable = false)
     private String paymentMethod;
 
-    @Column(nullable = false,updatable = false)
+    @Column(name="created_at",nullable = false,updatable = false)
     @CreationTimestamp
     private LocalDateTime createdAt;
 
-    @Column(nullable = false)
+    @Column(name="updated_at",nullable = false)
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 }
